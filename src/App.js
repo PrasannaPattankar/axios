@@ -17,19 +17,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <table className="tat" border="1px">
+        <tr>
+          <th>Name</th>
+          <th>User name</th>
+          <th>Email</th>
+        </tr>
         {this.state.persons.map(person => {
           const { username, name, email, id } = person;
           return (
-            <div key={person.id}>
-              <p>Name:{person.name}</p>
-
-              <p>username:{person.username}</p>
-              <p>Email:{person.email}</p>
-            </div>
+            <tr key={person.id}>
+              <td>{person.name}</td>
+              <td>{person.username}</td>
+              <td>{person.email}</td>
+            </tr>
           );
         })}
-      </div>
+      </table>
     );
   }
 }
